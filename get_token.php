@@ -1,8 +1,13 @@
 <?php
- header('Access-Control-Allow-Origin: *', "Access-Control-Allow-Credentials: true", 'Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS', 'Access-Control-Max-Age: 1000', 'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token , Authorization');
- header('content-type: application/json; charset=utf-8');
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Credentials: true");
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+header('Access-Control-Max-Age: 1000');
+header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token , Authorization');
+header('content-type: application/json; charset=utf-8');
 $curl = curl_init();
 
+$amount = $_POST["amount"];
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'https://webpay3gint.transbank.cl/rswebpaytransaction/api/webpay/v1.0/transactions',
   CURLOPT_RETURNTRANSFER => true,
@@ -15,8 +20,8 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS =>'{
   "buy_order": "OrdenCompra84213",
   "session_id": "sesion1234564",
-  "amount": 1000,
-  "return_url": "http://"
+  "amount": '. $amount .',
+  "return_url": "http://mpm.void.cl/cart/pagado"
 }',
   CURLOPT_HTTPHEADER => array(
     'Tbk-Api-Key-Secret: 579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C',
