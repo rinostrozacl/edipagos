@@ -1,6 +1,6 @@
 <?php
  header('Access-Control-Allow-Origin: *', "Access-Control-Allow-Credentials: true", 'Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS', 'Access-Control-Max-Age: 1000', 'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token , Authorization');
-
+ header('content-type: application/json; charset=utf-8');
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
