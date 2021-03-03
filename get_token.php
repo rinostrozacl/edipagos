@@ -1,4 +1,7 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
+header("Access-Control-Allow-Headers: X-Requested-With");
 
 $curl = curl_init();
 
@@ -15,7 +18,7 @@ curl_setopt_array($curl, array(
   "buy_order": "OrdenCompra84213",
   "session_id": "sesion1234564",
   "amount": 1000,
-  "return_url": "https://localhost:8080/webpay/return"
+  "return_url": "http://"
 }',
   CURLOPT_HTTPHEADER => array(
     'Tbk-Api-Key-Secret: 579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C',
