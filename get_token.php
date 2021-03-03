@@ -1,9 +1,5 @@
 <?php
- header('Access-Control-Allow-Origin: *'); 
- header("Access-Control-Allow-Credentials: true");
- header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
- header('Access-Control-Max-Age: 1000');
- header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token , Authorization');
+ header('Access-Control-Allow-Origin: *', "Access-Control-Allow-Credentials: true", 'Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS', 'Access-Control-Max-Age: 1000', 'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token , Authorization');
 
 $curl = curl_init();
 
