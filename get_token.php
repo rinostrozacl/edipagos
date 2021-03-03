@@ -6,9 +6,7 @@ header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token , Autho
 header('content-type: application/json; charset=utf-8');
 $curl = curl_init();
 
-$data_raw = $_POST["data"];
-$data = json_decode($data_raw); 
-
+$amount = $_POST["amount"];
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'https://webpay3gint.transbank.cl/rswebpaytransaction/api/webpay/v1.0/transactions',
   CURLOPT_RETURNTRANSFER => true,
@@ -21,7 +19,7 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS =>'{
   "buy_order": "OrdenCompra84213",
   "session_id": "sesion1234564",
-  "amount": "'. $data.amount .'",
+  "amount": "'. $amount .'",
   "return_url": "http://mpm.void.cl/cart/pagado"
 }',
   CURLOPT_HTTPHEADER => array(
