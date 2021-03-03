@@ -25,7 +25,7 @@ curl_setopt_array($curl, array(
   "buy_order": "'. $data["buy_order"] .'",
   "session_id": "sesion1234564",
   "amount": "'. $data["amount"] .'",
-  "return_url": "http://mpm.void.cl/cart/pagado/'. $data["buy_order"] .'"
+  "return_url": "https://mpm.void.cl/cart/pagado/'. $data["buy_order"] .'"
 }',
   CURLOPT_HTTPHEADER => array(
     'Tbk-Api-Key-Secret: 579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C',
