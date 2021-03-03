@@ -19,7 +19,7 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS =>'{
   "buy_order": "OrdenCompra84213",
   "session_id": "sesion1234564",
-  "amount": '. $amount .',
+  "amount": "'. $amount .'",
   "return_url": "http://mpm.void.cl/cart/pagado"
 }',
   CURLOPT_HTTPHEADER => array(
