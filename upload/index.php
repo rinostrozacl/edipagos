@@ -1,10 +1,15 @@
 <?php
-    header('Access-Control-Allow-Origin: *');
-    header("Access-Control-Allow-Credentials: true");
-    header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
-    header('Access-Control-Max-Age: 1000');
-    header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token , Authorization');
-    header('content-type: application/json; charset=utf-8');
+// Comment if you don't want to allow posts from other domains
+header('Access-Control-Allow-Origin: *');
+
+// Allow the following methods to access this file
+header('Access-Control-Allow-Methods: OPTIONS, GET, DELETE, POST, HEAD, PATCH');
+
+// Allow the following headers in preflight
+header('Access-Control-Allow-Headers: content-type, upload-length, upload-offset, upload-name');
+
+// Allow the following headers in response
+header('Access-Control-Expose-Headers: upload-offset');
     
     /*
     //datos del arhivo
@@ -22,8 +27,10 @@
                 echo "Ocurrió algún error al subir el fichero. No pudo guardarse.";
         }
     }
-    echo "Uploaded";
+    
     */
+
+    echo "Uploaded";
 
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
